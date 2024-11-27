@@ -1,4 +1,4 @@
-//Text Replacement Effect
+// Text Replacement Effect
 const checkReplace = document.querySelector('.replace-me');
 
 if (checkReplace !== null) {
@@ -79,4 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     });
   });
+});
+
+// Close Navbar on Outside Click
+document.addEventListener('click', (event) => {
+  const navbar = document.querySelector('.navbar-collapse');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+
+  if (!navbar.contains(event.target) && !navbarToggler.contains(event.target)) {
+    const bsCollapse = new bootstrap.Collapse(navbar, {
+      toggle: false
+    });
+    bsCollapse.hide();
+  }
 });
